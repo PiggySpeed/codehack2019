@@ -40,8 +40,8 @@ export default class Navigation extends React.Component {
         <img style={styles.logo} src={logo} alt="logo" />
         <div style={{display: 'flex'}}>
           <Link style={styles.navItem} className="nav-item" to="/">Home</Link>
-          <Link style={styles.navItem} className="nav-item" to="/intro">MyRecoveryPlan</Link>
-          <Link style={styles.navItem} className="nav-item" to="/resources">Resources</Link>
+          <Link style={styles.navItem} className="nav-item" to="/survey">MyRecoveryPlan</Link>
+          <Link style={styles.navItem} className="nav-item" to="/calendar">Resources</Link>
         </div>
         <Input style={{display: 'flex', flex:'none', height: 'min-content'}} icon='search' placeholder='Search...' />
       </div>

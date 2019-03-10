@@ -3,7 +3,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import history from '../history';
 import Doctor from './starcompleted.svg';
-
+import Lottie from 'react-lottie';
+// import * as animationData from './star.json'
 
 const styles = {
   container: {
@@ -41,12 +42,26 @@ const styles = {
 export default class ThankYouScreen extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {isStopped: false, isPaused: false};
   }
 
   render() {
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: require('./star.json'),
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
     return (
       <div id="thankyou-screen" style={styles.container} className="transition-item detail-page">
-        <img style={styles.doctorLogo} src={Doctor} alt="doctor" />
+        {/*<img style={styles.doctorLogo} src={Doctor} alt="doctor" />*/}
+        <Lottie options={defaultOptions}
+                height={400}
+                width={400}
+                isStopped={this.state.isStopped}
+                isPaused={this.state.isPaused}/>
         <h1 style={styles.title}>THANK YOU!</h1>
         <p style={styles.text}>You may now close this window.</p>
       </div>
