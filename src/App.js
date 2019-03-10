@@ -1,25 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Switch, Route } from 'react-router-dom';
+import PageTransition from 'react-router-page-transition';
+
+import history from './history';
+import IntroScreen from './IntroScreen/IntroScreen';
+import SurveyScreen from './SurveyScreen/SurveyScreen';
+import ReviewScreen from './ReviewScreen/ReviewScreen';
+import ThankYouScreen from './ThankYouScreen/ThankYouScreen';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Router history={history}>
+          <Route
+            render={({ location }) => (
+              <PageTransition
+                data={{ clickedItemData: "Hello world" }}
+                timeout={1000}
+              >
+                <Switch location={location}>
+                  <Route
+                    exact
+                    path="/"
+                    component={IntroScreen}
+                  />
+                  <Route
+                    path="/survey/:itemId"
+                    component={SurveyScreen}
+                  />
+                  <Route
+                    path="/review"
+                    component={ReviewScreen}
+                  />
+                  <Route
+                    path="/thankyou"
+                    component={ThankYouScreen}
+                  />
+                </Switch>
+              </PageTransition>
+            )}
+          />
+        </Router>
       </div>
     );
   }
