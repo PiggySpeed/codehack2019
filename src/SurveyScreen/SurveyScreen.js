@@ -5,8 +5,8 @@ import history from '../history';
 
 import SurveyButtons from '../components/SurveyButtons/SurveyButtons';
 import SurveyPain from './SurveyPain/SurveyPain';
-import {PAIN_OPTIONS, ICONS} from './constants';
-
+import {PAIN_OPTIONS, SURVEY_BUTTONS} from './constants';
+import Doctor from './logos/doctor.svg';
 
 const styles = {
   container: {
@@ -23,12 +23,25 @@ const styles = {
     flex: 'none',
     maxWidth: '45rem',
     height: 'min-content',
-    width: '100%'
+    width: '100%',
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    maxWidth: '45rem',
+    height: 'min-content',
+    width: '100%',
+    padding: '2rem',
+    paddingLeft: '1rem',
+    paddingRight: '1rem'
   },
   title: {
     fontSize: '45pt',
     color: '#000000',
     marginBottom: '2rem'
+  },
+  doctorLogo: {
+    width: 150
   }
 };
 
@@ -43,23 +56,17 @@ const NextBtn = withRouter(({ children }) => (
 ));
 
 
-const SURVEY_BUTTONS = [
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#6cff8a' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#83d9ff' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#ff8a62' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#ff8afd' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#6cff8a' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#83d9ff' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#ff8a62' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#ff8afd' }  },
-  { text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#6cff8a' }  }
-];
-
 
 export default class SurveyScreen extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      completed: [0]
+    };
+
     this.getSurvey = this.getSurvey.bind(this);
+    this.handleFinishSurvey = this.handleFinishSurvey.bind(this);
   }
 
   getSurvey(type) {
@@ -68,15 +75,39 @@ export default class SurveyScreen extends React.Component {
     }[type]
   }
 
+  handleFinishSurvey(id) {
+    const finishedSurveys = this.state.completed.slice();
+    finishedSurveys.push(id);
+    this.setState({ completed: finishedSurveys});
+
+  }
+
   render() {
     return (
       <div style={styles.container} id="survey-screen" className="transition-item detail-page">
         <div style={{ height: 'min-content', width: '100%', display: 'flex', flexFlow: 'column', alignItems: 'center' }}>
-        <h1 style={styles.title}>Progress</h1>
+          <div style={styles.header}>
+            <img style={styles.doctorLogo} src={Doctor} alt="doctor" />
+            <div className="speech-bubble">
+              <div style={{height: 'min-content', display: 'flex', flexFlow: 'column', alignItems:'flex-start' }}>
+                <h1 style={{fontFamily: 'Montserrat, Arial', color: '#767676', fontSize: 42, fontWeight: 700, margin: 0}}>CHECK IN</h1>
+                <p style={{fontFamily: 'Montserrat, Arial', color: '#767676', fontSize: 22, fontWeight: 400, margin: 0}}>Fill out the survey below</p>
+                <p style={{fontFamily: 'Montserrat, Arial', color: '#767676', fontSize: 22, fontWeight: 400, margin: 0}}>to track your recovery progress</p>
+              </div>
+            </div>
+          </div>
 
         {/* Survey Buttons */}
         <div className="grid" style={styles.surveyGrid}>
-          {SURVEY_BUTTONS.map((item, id) => <SurveyPain key={id} text={item.text} icon={item.icon} style={item.style}/>)}
+          {SURVEY_BUTTONS.map((item, id) => <SurveyPain
+            key={id}
+            id={item.id}
+            text={item.text}
+            icon={item.icon}
+            style={item.style}
+            isFinished={this.state.completed.indexOf(item.id) >= 0}
+            onFinish={this.handleFinishSurvey}
+          />)}
         </div>
 
         </div>

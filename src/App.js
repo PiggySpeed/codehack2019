@@ -9,6 +9,16 @@ import IntroScreen from './IntroScreen/IntroScreen';
 import SurveyScreen from './SurveyScreen/SurveyScreen';
 import ReviewScreen from './ReviewScreen/ReviewScreen';
 import ThankYouScreen from './ThankYouScreen/ThankYouScreen';
+import Navigation from './components/Navigation/Navigation';
+
+const styles = {
+  container: {
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    flexFlow: 'column'
+  }
+};
 
 class App extends Component {
   render() {
@@ -16,34 +26,37 @@ class App extends Component {
       <Provider store={configureStore()}>
         <div className="App">
           <Router history={history}>
-            <Route
-              render={({ location }) => (
-                <PageTransition
-                  data={{ clickedItemData: "Hello world" }}
-                  timeout={1000}
-                >
-                  <Switch location={location}>
-                    <Route
-                      exact
-                      path="/"
-                      component={IntroScreen}
-                    />
-                    <Route
-                      path="/survey/:itemId"
-                      component={SurveyScreen}
-                    />
-                    <Route
-                      path="/review"
-                      component={ReviewScreen}
-                    />
-                    <Route
-                      path="/thankyou"
-                      component={ThankYouScreen}
-                    />
-                  </Switch>
-                </PageTransition>
-              )}
-            />
+            <div style={styles.container}>
+              <Navigation />
+              <Route
+                render={({ location }) => (
+                  <PageTransition
+                    data={{ clickedItemData: "Hello world" }}
+                    timeout={1000}
+                  >
+                    <Switch location={location}>
+                      <Route
+                        exact
+                        path="/"
+                        component={IntroScreen}
+                      />
+                      <Route
+                        path="/survey/:itemId"
+                        component={SurveyScreen}
+                      />
+                      <Route
+                        path="/review"
+                        component={ReviewScreen}
+                      />
+                      <Route
+                        path="/thankyou"
+                        component={ThankYouScreen}
+                      />
+                    </Switch>
+                  </PageTransition>
+                )}
+              />
+            </div>
           </Router>
         </div>
       </Provider>

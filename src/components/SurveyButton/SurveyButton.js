@@ -1,5 +1,5 @@
 import React from 'react';
-import {ICONS} from '../../SurveyScreen/constants';
+import checkmark from '../../SurveyScreen/logos/checkmark.svg';
 
 
 const surveyBtnStyles = {
@@ -13,15 +13,18 @@ const surveyBtnStyles = {
   },
   buttonText: {
     color: '#FFFFFF',
-    fontSize: '24pt',
-    fontWeight: '500'
+    fontSize: '36pt',
+    fontWeight: '800'
+  },
+  surveyLogos: {
+    height: 100
   }
 };
 
-const SurveyButton = ({ painSurvey, onPainSurveyResponse, text, icon, style, ...rest }) => (
+const SurveyButton = ({ painSurvey, onPainSurveyResponse, text, icon, style, isFinished, onFinish, ...rest }) => (
   <div {...rest} style={{...surveyBtnStyles.container, ...style}} className="survey-button">
-    {ICONS[icon]}
-    <p style={surveyBtnStyles.buttonText}>{text}</p>
+    {isFinished && <img style={surveyBtnStyles.surveyLogos} src={checkmark} alt="check" />}
+    {!isFinished && <p style={surveyBtnStyles.buttonText}>{text.toUpperCase()}</p>}
   </div>
 );
 

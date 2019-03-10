@@ -1,5 +1,4 @@
 
-
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -9,6 +8,37 @@
 .survey-button {
   transition: all 0.05s linear;
 }
+
 .survey-button:hover, .survey-button:active {
   transform: scale(0.95);
+}
+
+.speech-bubble {
+  font-family: 'Montserrat', Arial;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 1em;
+  box-shadow: 0 0 20px #cbcbcb;
+  height: 200px;
+  width: 400px;
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-right-color: #f5f5f5;
+  /*box-shadow: 0 0 10px #929292;*/
+  border-left: 0;
+  margin-top: -20px;
+  margin-left: -20px;
 }

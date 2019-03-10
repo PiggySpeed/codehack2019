@@ -33,3 +33,15 @@ export const PAIN_OPTIONS = [
 export const QUESTION_IDS = {
   PAIN: 0
 };
+
+
+export const SURVEY_BUTTONS = [
+  { id: 0, text: 'Weight', icon: 'MOCK', style: { backgroundColor: '#3cbba5' }  },
+  { id: 1, text: 'Pain', icon: 'MOCK', style: { backgroundColor: '#6ac5b4' }  },
+  { id: 2, text: 'Breathing', icon: 'MOCK', style: { backgroundColor: '#6ac5b4' }  },
+  { id: 3, text: 'Mood', icon: 'MOCK', style: { backgroundColor: '#3cbba5' }  },
+  { id: 4, text: 'Blood Sugar', icon: 'MOCK', style: { backgroundColor: '#3cbba5' }  },
+  { id: 5, text: 'Meds', icon: 'MOCK', style: { backgroundColor: '#6ac5b4' }  },
+  { id: 6, text: 'Appetite', icon: 'MOCK', style: { backgroundColor: '#6ac5b4' }  },
+  { id: 7, text: 'Mobility', icon: 'MOCK', style: { backgroundColor: '#3cbba5' }  }
+];

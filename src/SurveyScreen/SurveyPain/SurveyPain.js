@@ -25,23 +25,21 @@ const styles = {
     width: '100%',
   },
   textArea: {
-    padding: '0.5rem',
+    padding: '1rem',
     marginTop: '1rem',
     marginLeft: '1rem',
     marginRight: '1rem',
     marginBottom: '2rem',
-    minHeight: 150
+    minHeight: 150,
+    fontSize: '22pt',
   },
   submitButton: {
-    // height: 75,
     fontSize: '22pt',
     color: '#FFFFFF',
     backgroundColor: '#00df62'
   },
   cancelButton: {
     fontSize: '22pt',
-    // color: '#FFFFFF',
-    // backgroundColor: '#00df62'
   }
 };
 
@@ -54,8 +52,6 @@ const btnStyles = {
     height: 'min-content',
   },
   iconContainer: (isActive) => ({
-    // width: 150,
-    // height: 150,
     padding: 20,
     borderRadius: '50%',
     borderWidth: '10px',
@@ -72,7 +68,6 @@ const btnStyles = {
 const SurveyPainButton = ({ type, onClick, value, text, isActive }) => (
   <div onClick={() => onClick(value, text)} style={btnStyles.container} className="surveypain-button">
     <div style={btnStyles.iconContainer(isActive)}>{ICONS[type]}</div>
-    <p>{text}</p>
   </div>
 );
 
@@ -96,12 +91,14 @@ class SurveyPain extends React.Component {
   }
 
   handleSubmitClick() {
+    this.props.onFinish(this.props.id);
     this.props.onPainSurveyResponse({
       value: this.state.value,
       text: this.state.text,
       questionID: QUESTION_IDS[PAIN],
       category: PAIN
     });
+    this.setState({ isModalOpen: false })
   }
 
   handleBlur(e) {
@@ -113,16 +110,15 @@ class SurveyPain extends React.Component {
   }
 
   render() {
-    const {text, icon, style} = this.props;
+    const {text, icon, style, isFinished} = this.props;
 
     return (
-      <Modal open={this.state.isModalOpen} trigger={<SurveyButton {...this.props} text={text} icon={icon} style={style} />}>
-        <Modal.Header>In this section, we would like you to rate your pain</Modal.Header>
-        <Modal.Content image>
-
+      <Modal open={this.state.isModalOpen} trigger={<SurveyButton {...this.props} text={text} icon={icon} style={style} isFinished={isFinished} />}>
+        <Modal.Content style={{display: 'flex', flexFlow: 'column', alignItems: 'center'}}>
+          <Modal.Header style={{ fontFamily: 'Montserrat', display: 'flex', justifyContent: 'center', fontSize: 56, color: '#3cbba5', fontWeight: 700 }}>PAIN</Modal.Header>
           <Modal.Description style={{width: '100%', flex: 'none'}}>
             <div style={styles.scrollContainer}>
-              <Header>Please rate your pain level.</Header>
+              <Header style={{display: 'flex', justifyContent: 'center', color: '#767676', fontSize: 36}}>Rate your level of pain below.</Header>
               <div style={styles.btnContainer}>
                 {PAIN_OPTIONS.map((item, id) =>
                   <SurveyPainButton
@@ -139,7 +135,7 @@ class SurveyPain extends React.Component {
 
               <TextArea
                 autoHeight
-                placeholder='Comments'
+                placeholder='Please describe your pain (e.g. throbbing, aching, stinging)'
                 onBlur={this.handleBlur}
                 style={styles.textArea}
               />
