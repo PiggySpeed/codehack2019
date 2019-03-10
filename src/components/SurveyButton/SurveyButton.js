@@ -18,7 +18,7 @@ const surveyBtnStyles = {
   }
 };
 
-const SurveyButton = ({ text, icon, style, ...rest }) => (
+const SurveyButton = ({ painSurvey, onPainSurveyResponse, text, icon, style, ...rest }) => (
   <div {...rest} style={{...surveyBtnStyles.container, ...style}} className="survey-button">
     {ICONS[icon]}
     <p style={surveyBtnStyles.buttonText}>{text}</p>

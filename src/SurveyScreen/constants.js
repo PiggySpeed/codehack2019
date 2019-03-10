@@ -29,3 +29,7 @@ export const PAIN_OPTIONS = [
   { text: 'option4', value: 3, icon: 'LIKERT_3' },
   { text: 'option5', value: 4, icon: 'LIKERT_4' },
 ];
+
+export const QUESTION_IDS = {
+  PAIN: 0
+};
