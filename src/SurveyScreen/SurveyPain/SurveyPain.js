@@ -11,7 +11,7 @@ const PAIN = "PAIN";
 const styles = {
   btnContainer: {
     display: 'flex',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
@@ -48,7 +48,7 @@ const btnStyles = {
     display: 'flex',
     flexFlow: 'column',
     alignItems: 'center',
-    margin: '2rem',
+    margin: '0rem',
     height: 'min-content',
   },
   iconContainer: (isActive) => ({
