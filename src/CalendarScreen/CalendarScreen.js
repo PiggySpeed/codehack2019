@@ -2,6 +2,7 @@ import './calendarscreen.css';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import history from '../history';
+import {Button} from 'semantic-ui-react';
 import {DAYS} from './constants';
 import CalendarWound from './CalendarWound/CalendarWound';
 import {CalendarStartButton} from './CalendarButton';
@@ -45,7 +46,9 @@ export default class CalendarScreen extends React.Component {
               isFinished={false}
             />
           ))}
+
         </div>
+          <Button style={{marginTop: '2rem', width: '400px', height: '150px', backgroundColor: '#3cbba5', color: '#FFFFFF'}} onClick={() => history.push('/review')}>NEXT</Button>
 
       </div>
     )

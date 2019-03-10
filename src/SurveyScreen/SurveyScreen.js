@@ -2,7 +2,7 @@ import './surveyscreen.css';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import history from '../history';
-
+import {Button} from 'semantic-ui-react';
 import SurveyButtons from '../components/SurveyButtons/SurveyButtons';
 import SurveyPain from './SurveyPain/SurveyPain';
 import {PAIN_OPTIONS, SURVEY_BUTTONS} from './constants';
@@ -109,6 +109,8 @@ export default class SurveyScreen extends React.Component {
             onFinish={this.handleFinishSurvey}
           />)}
         </div>
+
+          <Button style={{marginTop: '2rem', width: '400px', height: '150px', backgroundColor: '#3cbba5', color: '#FFFFFF'}} onClick={() => history.push('/calendar')}>NEXT</Button>
 
         </div>
       </div>
