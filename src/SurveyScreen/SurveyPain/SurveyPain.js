@@ -98,6 +98,7 @@ class SurveyPain extends React.Component {
       questionID: QUESTION_IDS[PAIN],
       category: PAIN
     });
+    this.props.showAnim();
     this.setState({ isModalOpen: false })
   }
 

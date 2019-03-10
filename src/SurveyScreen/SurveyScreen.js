@@ -62,17 +62,24 @@ export default class SurveyScreen extends React.Component {
     super(props);
 
     this.state = {
-      completed: [0]
+      completed: [0],
+      anim: false
     };
 
+    this.showAnim = this.showAnim.bind(this);
     this.getSurvey = this.getSurvey.bind(this);
     this.handleFinishSurvey = this.handleFinishSurvey.bind(this);
+
   }
 
   getSurvey(type) {
     return {
       PAIN: <SurveyButtons options={PAIN_OPTIONS} />
     }[type]
+  }
+
+  showAnim() {
+    this.setState({ anim: true });
   }
 
   handleFinishSurvey(id) {
@@ -104,11 +111,17 @@ export default class SurveyScreen extends React.Component {
             id={item.id}
             text={item.text}
             icon={item.icon}
+            showAnim={this.showAnim}
             style={item.style}
             isFinished={this.state.completed.indexOf(item.id) >= 0}
             onFinish={this.handleFinishSurvey}
           />)}
         </div>
+
+          {/* Animation */}
+          {/*<div style={{ position: 'absolute',  }}>*/}
+          {/*</div>*/}
+
 
           <Button style={{marginTop: '2rem', width: '400px', height: '150px', backgroundColor: '#3cbba5', color: '#FFFFFF'}} onClick={() => history.push('/review')}>NEXT</Button>
 
