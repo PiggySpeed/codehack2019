@@ -8,6 +8,7 @@ import history from './history';
 import IntroScreen from './IntroScreen/IntroScreen';
 import SurveyScreen from './SurveyScreen/SurveyScreen';
 import ReviewScreen from './ReviewScreen/ReviewScreen';
+import CalendarScreen from './CalendarScreen/CalendarScreen';
 import ThankYouScreen from './ThankYouScreen/ThankYouScreen';
 import Navigation from './components/Navigation/Navigation';
 
@@ -47,6 +48,10 @@ class App extends Component {
                       <Route
                         path="/review"
                         component={ReviewScreen}
+                      />
+                      <Route
+                        path="/calendar"
+                        component={CalendarScreen}
                       />
                       <Route
                         path="/thankyou"

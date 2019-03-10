@@ -11,7 +11,7 @@ const styles = {
     paddingRight: '2rem',
     display: 'flex',
     flex: 'none',
-    borderBottom: '1px solid #767676',
+    borderBottom: '1px solid #BCBCBC',
     width: '100%',
     height: 'min-content',
     justifyContent: 'space-between',
@@ -41,7 +41,7 @@ export default class Navigation extends React.Component {
         <div style={{display: 'flex'}}>
           <Link style={styles.navItem} className="nav-item" to="/">Home</Link>
           <Link style={styles.navItem} className="nav-item" to="/intro">MyRecoveryPlan</Link>
-          <Link style={styles.navItem} className="nav-item" to="intro">Resources</Link>
+          <Link style={styles.navItem} className="nav-item" to="/resources">Resources</Link>
         </div>
         <Input style={{display: 'flex', flex:'none', height: 'min-content'}} icon='search' placeholder='Search...' />
       </div>

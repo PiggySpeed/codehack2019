@@ -1,0 +1,29 @@
+.speech-bubble-intro {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+  background: #f5f5f5;
+  border-radius: .4em;
+  box-shadow: 0 0 20px #cbcbcb;
+  height: min-content;
+  margin-bottom: 10rem;
+  width: 600px;
+}
+
+.speech-bubble-intro:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #f5f5f5;
+  border-top: 0;
+  margin-left: -20px;
+  margin-top: -20px;
+}
