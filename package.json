@@ -2,7 +2,6 @@
   "name": "codehack2019",
   "version": "0.1.0",
   "private": true,
-  "engines" : { "node" : ">=10.00" },
   "dependencies": {
     "express": "^4.16.4",
     "lottie-react-web": "^2.1.4",
