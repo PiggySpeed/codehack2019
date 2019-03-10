@@ -1,10 +1,11 @@
 import React from 'react';
 import Pikachu from './logos/pikachu.svg';
-import Rattata from './logos/rattata.svg';
-import Snorlax from './logos/snorlax.svg';
-import Meowth from './logos/meowth.svg';
-import Charmander from './logos/charmander.svg';
-import Eevee from './logos/eevee.svg';
+
+import Rattata from './logos/face_5.svg';
+import Snorlax from './logos/face_4.svg';
+import Meowth from './logos/face_3.svg';
+import Charmander from './logos/face_2.svg';
+import Eevee from './logos/face_1.svg';
 
 const styles = {
   surveyLogos: {
@@ -14,11 +15,11 @@ const styles = {
 
 export const ICONS = {
   MOCK: <img style={styles.surveyLogos} src={Pikachu} alt="pikachu" />,
-  LIKERT_0: <img style={styles.surveyLogos} src={Rattata} alt="rattata" />,
-  LIKERT_1: <img style={styles.surveyLogos} src={Snorlax} alt="snorlax" />,
-  LIKERT_2: <img style={styles.surveyLogos} src={Meowth} alt="meowth" />,
-  LIKERT_3: <img style={styles.surveyLogos} src={Charmander} alt="charmander" />,
-  LIKERT_4: <img style={styles.surveyLogos} src={Eevee} alt="eevee" />,
+  LIKERT_0: <img style={styles.surveyLogos} src={Rattata} alt="face_5" />,
+  LIKERT_1: <img style={styles.surveyLogos} src={Snorlax} alt="face_4" />,
+  LIKERT_2: <img style={styles.surveyLogos} src={Meowth} alt="face_3" />,
+  LIKERT_3: <img style={styles.surveyLogos} src={Charmander} alt="face_2" />,
+  LIKERT_4: <img style={styles.surveyLogos} src={Eevee} alt="face_1" />,
 };
 
 
