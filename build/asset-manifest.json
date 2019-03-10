@@ -1,17 +1,17 @@
 {
-  "main.css": "/static/css/main.9d4d3b97.chunk.css",
-  "main.js": "/static/js/main.b45979c0.chunk.js",
-  "main.js.map": "/static/js/main.b45979c0.chunk.js.map",
+  "main.css": "/static/css/main.9cfa8718.chunk.css",
+  "main.js": "/static/js/main.773e8999.chunk.js",
+  "main.js.map": "/static/js/main.773e8999.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.c5541365.js",
   "runtime~main.js.map": "/static/js/runtime~main.c5541365.js.map",
   "static/css/2.7214ab62.chunk.css": "/static/css/2.7214ab62.chunk.css",
-  "static/js/2.30e7646a.chunk.js": "/static/js/2.30e7646a.chunk.js",
-  "static/js/2.30e7646a.chunk.js.map": "/static/js/2.30e7646a.chunk.js.map",
+  "static/js/2.f0cf85c9.chunk.js": "/static/js/2.f0cf85c9.chunk.js",
+  "static/js/2.f0cf85c9.chunk.js.map": "/static/js/2.f0cf85c9.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.7b7c005d58552e7c98ed54515c227aa7.js": "/precache-manifest.7b7c005d58552e7c98ed54515c227aa7.js",
+  "precache-manifest.2fc28c87e52c27538f6abf946283fdbc.js": "/precache-manifest.2fc28c87e52c27538f6abf946283fdbc.js",
   "service-worker.js": "/service-worker.js",
   "static/css/2.7214ab62.chunk.css.map": "/static/css/2.7214ab62.chunk.css.map",
-  "static/css/main.9d4d3b97.chunk.css.map": "/static/css/main.9d4d3b97.chunk.css.map",
+  "static/css/main.9cfa8718.chunk.css.map": "/static/css/main.9cfa8718.chunk.css.map",
   "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff",
   "static/media/checkmark.svg": "/static/media/checkmark.e15e162b.svg",
   "static/media/doctor.svg": "/static/media/doctor.d62a35f8.svg",
@@ -22,5 +22,6 @@
   "static/media/face_5.svg": "/static/media/face_5.65e87a85.svg",
   "static/media/logo.svg": "/static/media/logo.f1afbd84.svg",
   "static/media/phone.svg": "/static/media/phone.09614c11.svg",
-  "static/media/pikachu.svg": "/static/media/pikachu.3c788fc7.svg"
+  "static/media/pikachu.svg": "/static/media/pikachu.3c788fc7.svg",
+  "static/media/starcompleted.svg": "/static/media/starcompleted.04114e4a.svg"
 }

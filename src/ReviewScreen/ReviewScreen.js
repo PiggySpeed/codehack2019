@@ -89,7 +89,7 @@ export default class ReviewScreen extends React.Component {
         <div style={styles.body}>
           <img style={styles.phoneLogo} src={Phone} alt="phone" />
             <p style={styles.bodyText}>{BODY_TEXT_1}<br/><em style={{color: '#3cbba5', fontStyle: 'normal'}}>{BODY_TEXT_2}</em>{BODY_TEXT_3}</p>
-          <Button style={styles.button} onClick={() => history.push('/thankyou')}>Got it!</Button>
+          <Button style={styles.button} onClick={() => history.push('/calendar')}>Got it!</Button>
         </div>
 
       </div>

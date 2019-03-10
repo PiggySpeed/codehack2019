@@ -110,7 +110,7 @@ export default class SurveyScreen extends React.Component {
           />)}
         </div>
 
-          <Button style={{marginTop: '2rem', width: '400px', height: '150px', backgroundColor: '#3cbba5', color: '#FFFFFF'}} onClick={() => history.push('/calendar')}>NEXT</Button>
+          <Button style={{marginTop: '2rem', width: '400px', height: '150px', backgroundColor: '#3cbba5', color: '#FFFFFF'}} onClick={() => history.push('/review')}>NEXT</Button>
 
         </div>
       </div>

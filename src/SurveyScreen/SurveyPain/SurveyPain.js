@@ -141,8 +141,8 @@ class SurveyPain extends React.Component {
               />
 
               <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
-                <Button style={styles.cancelButton} onClick={this.handleCancel}>Cancel</Button>
-                <Button style={styles.submitButton} onClick={this.handleSubmitClick}>Submit</Button>
+                <Button style={styles.cancelButton} onPress={this.handleCancel} onClick={this.handleCancel}>Cancel</Button>
+                <Button style={styles.submitButton} onPress={this.handleSubmitClick} onClick={this.handleSubmitClick}>Submit</Button>
               </div>
             </div>
           </Modal.Description>
