@@ -9,6 +9,7 @@
   transition: all 0.05s linear;
 }
 
+
 .survey-button:hover, .survey-button:active {
   transform: scale(0.95);
 }
