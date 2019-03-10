@@ -1,6 +1,8 @@
 .transition-wrapper {
   position: relative;
   z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .transition-wrapper .transition-item {
@@ -15,8 +17,6 @@
 .detail-page {
   overflow: auto;
   box-sizing: border-box;
-  padding: 20px;
-  height: 100vh;
   /* background-color: #03a9f4; */
   transition: transform 0.5s, opacity 0.5s;
 }

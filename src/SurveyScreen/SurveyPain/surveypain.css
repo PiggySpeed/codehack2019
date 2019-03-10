@@ -1,0 +1,11 @@
+.surveypain-button {
+  transition: all 0.05s linear;
+}
+
+.surveypain-button:hover {
+  transform: scale(1.05);
+}
+
+.surveypain-button:active {
+  transform: scale(1.05);
+}
